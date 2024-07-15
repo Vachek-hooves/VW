@@ -1,10 +1,11 @@
 export const QUIZZ = [
   {
+    description: 'Artists of Velden am Wörter See',
     isLocked: false,
     id: 's1',
-    theme: 'Artists of Velden am Werther See',
+    theme: 'Artists of Velden am Wörter See',
     misticStory:
-      "In the very heart of Austria, on the shores of the picturesque lake Velden am Wörthersee, there is an ancient city that hides the secret of a long-forgotten treasure. Legend has it that in ancient times, a local sorcerer cursed the treasure and covered it with an eternal veil of mist so that no one could find it without the right key.  There is a story about a young daredevil named Albert, who decided to solve this mystery and find the treasure. After long research and adventurous search, he came across an ancient map that promised treasure deposits in the depths of the lake. On the night before the full moon, when the fog enveloped the city, Albert set out on a boat to the waters of the lake. Swimming in the direction marked on the map, he suddenly saw a light shining from under the water. Picking up the ancient treasure chest, he heard the voice of the magician: 'You have passed the test and overcome the obstacles, but remember that the treasure carries not only wealth, but also great responsibility.' Returning to the city with the treasure, Albert became the protector of Velden am Wörter See, using the wealth for the good of the residents and the lake. Since that time, the city has flourished, and the legend of the treasure and the brave hero lives on in people's hearts as a symbol of hope and faith in goodness.",
+      "STORY-In the very heart of Austria, on the shores of the picturesque lake Velden am Wörthersee, there is an ancient city that hides the secret of a long-forgotten treasure. Legend has it that in ancient times, a local sorcerer cursed the treasure and covered it with an eternal veil of mist so that no one could find it without the right key.  There is a story about a young daredevil named Albert, who decided to solve this mystery and find the treasure. After long research and adventurous search, he came across an ancient map that promised treasure deposits in the depths of the lake. On the night before the full moon, when the fog enveloped the city, Albert set out on a boat to the waters of the lake. Swimming in the direction marked on the map, he suddenly saw a light shining from under the water. Picking up the ancient treasure chest, he heard the voice of the magician: 'You have passed the test and overcome the obstacles, but remember that the treasure carries not only wealth, but also great responsibility.' Returning to the city with the treasure, Albert became the protector of Velden am Wörter See, using the wealth for the good of the residents and the lake. Since that time, the city has flourished, and the legend of the treasure and the brave hero lives on in people's hearts as a symbol of hope and faith in goodness.",
     allQuestions: [
       {
         question: 'Which artist was born in Velden am Worthersee?',
@@ -14,7 +15,7 @@ export const QUIZZ = [
       {
         question: 'What style is Gustav Klimt known for?',
         answer: 'Symbolism and modernism',
-        options: ['expressionism', 'postmodernism', 'Symbolism and modernism.'],
+        options: ['expressionism', 'postmodernism', 'Symbolism and modernism'],
       },
       {
         question:
@@ -37,7 +38,7 @@ export const QUIZZ = [
           'Where can you see the works of Egon Schiele in the city of Velden am Worthersee?',
         answer: 'Egon Schiele Museum',
         options: [
-          'Klimt museums.',
+          'Klimt museums',
           'Egon Schiele Museum',
           'Art Gallery Felden am Werter See',
         ],
@@ -78,7 +79,8 @@ export const QUIZZ = [
     ],
   },
   {
-    isLocked: false,
+    description: 'History of Velden am Wörter See',
+    isLocked: true,
     id: 's2',
     theme: 'On the history of the city of Velden am Wörter See',
     misticStory:
@@ -156,7 +158,8 @@ export const QUIZZ = [
     ],
   },
   {
-    isLocked: false,
+    description: 'Writers of Velden am Wörter See',
+    isLocked: true,
     id: 's3',
     theme: 'Famous writers of the city of Velden am Wörter See',
     misticStory:
@@ -237,7 +240,8 @@ export const QUIZZ = [
     ],
   },
   {
-    isLocked: false,
+    description: 'Riddles of Velden am Wörter See',
+    isLocked: true,
     id: 's4',
     theme: 'Riddles about the city of Velden am Wörter See',
     misticStory:
@@ -298,63 +302,6 @@ export const QUIZZ = [
           'He was born in the city of Velden-am-Werter-See. The athlete gained fame with his talent. Who is he who rose to the top, He left unsurpassed in his field?',
         answer: 'Franz Clemens',
         options: ['Franz Clemens', 'Rainer Maria Rilke', 'Arthur Schnitzler'],
-      },
-    ],
-  },
-  {
-    isLocked: false,
-    id: 's5',
-    theme: 'Quotes about the city of Velden am Wörter See',
-    allQuestions: [
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
-      },
-      {
-        question: '',
-        answer: '',
-        options: [],
       },
     ],
   },
