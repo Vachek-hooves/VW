@@ -1,5 +1,5 @@
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import React from 'react';
+import {COLORS} from '../../constants/colors';
 
 const Next = ({onPress}) => {
   return (
@@ -13,14 +13,17 @@ export default Next;
 
 const styles = StyleSheet.create({
   nextContainerBtn: {
-    marginTop: 20,
+    marginTop: 30,
     width: '100%',
-    padding: 16,
+    padding: 15,
     borderRadius: 16,
-    backgroundColor: 'yellow',
+    backgroundColor: COLORS.gulfStream,
   },
   nextText: {
-    fontSize: 24,
+    fontSize: 30,
     textAlign: 'center',
+    color: COLORS.shark,
+    fontWeight: '800',
+    letterSpacing: 3,
   },
 });
