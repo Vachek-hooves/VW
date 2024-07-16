@@ -1,6 +1,7 @@
 export const QUOTES = [
   {
-    isLocked: true,
+    
+    isLocked: false,
     id: 'f1',
     theme: 'Famous People Quotes',
     questions: [

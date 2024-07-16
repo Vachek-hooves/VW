@@ -9,6 +9,7 @@ const Options = ({
   currentOption,
 }) => {
   function renderOptionsList({item}) {
+    console.log(item);
     // console.log(correctOption)
     return (
       <TouchableOpacity
@@ -52,7 +53,7 @@ const Options = ({
     <View>
       <FlatList
         data={options}
-        keyExtractor={item => item}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={renderOptionsList}
       />
     </View>

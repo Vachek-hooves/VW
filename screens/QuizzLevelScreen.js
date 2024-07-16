@@ -22,6 +22,7 @@ const QuizzLevelScreen = ({route}) => {
   const QUIZZ_ID = route.params.quizzId;
   const QUIZZ = quizz.find(item => item.id === QUIZZ_ID);
   const questionsLength = QUIZZ.allQuestions.length;
+  const story = QUIZZ.misticStory;
   // console.log(QUIZZ.allQuestions[0].options);
 
   const [currentQestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -35,7 +36,7 @@ const QuizzLevelScreen = ({route}) => {
 
   useEffect(() => {
     if (result === questionsLength) {
-      console.log(result, questionsLength);
+      // console.log(result, questionsLength);
       unlockNextLevel(QUIZZ_ID);
     }
   }, [modal]);
@@ -54,6 +55,7 @@ const QuizzLevelScreen = ({route}) => {
 
   const nextQuestionHandle = () => {
     if (currentQestionIndex == questionsLength - 1) {
+      console.log(currentQestionIndex, questionsLength - 1);
       setModal(true);
     } else {
       setCurrentQuestionIndex(currentQestionIndex + 1);
@@ -65,7 +67,7 @@ const QuizzLevelScreen = ({route}) => {
 
     Animated.timing(progress, {
       toValue: currentQestionIndex + 1,
-      duration: 1000,
+      duration: 500,
       useNativeDriver: false,
     }).start();
   };
@@ -77,6 +79,19 @@ const QuizzLevelScreen = ({route}) => {
 
   const restartLevel = () => {
     console.log('RESTART FUNCTION');
+    setModal(false);
+    setCurrentQuestionIndex(0);
+    setResult(0);
+    setCurrentOption(null);
+    setCorrectOption(null);
+    setIsOptionDisabled(false);
+    setNext(false);
+
+    Animated.timing(progress, {
+      toValue: 0,
+      duration: 500,
+      useNativeDriver: false,
+    }).start();
   };
 
   return (
@@ -116,8 +131,9 @@ const QuizzLevelScreen = ({route}) => {
           currentOption={currentOption}
         />
         {next && <Next onPress={nextQuestionHandle} />}
-        <Modal visible={setModal} animationType="slide" transparent={true}>
+        <Modal visible={modal} animationType="slide" transparent={true}>
           <CustomModal
+            story={story}
             restart={restartLevel}
             result={result}
             length={questionsLength}
