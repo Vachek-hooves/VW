@@ -1,4 +1,10 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import {COLORS} from '../constants/colors';
 import {MyButton} from '../components/ui';
 
@@ -11,12 +17,14 @@ const MainScreen = ({navigation}) => {
   }
   return (
     <View style={styles.mainContainer}>
-      <MyButton onPressFn={navigateGame}>
-        <Text>Game</Text>
-      </MyButton>
-      <MyButton onPressFn={navigateRules}>
-        <Text>Rules</Text>
-      </MyButton>
+      <SafeAreaView style={styles.safeArea}>
+        <MyButton onPressFn={navigateGame} btnStyle={styles.btnStyle}>
+          <Text style={styles.btnText}>Game</Text>
+        </MyButton>
+        <MyButton onPressFn={navigateRules} btnStyle={styles.btnStyle}>
+          <Text style={styles.btnText}>Rules</Text>
+        </MyButton>
+      </SafeAreaView>
     </View>
   );
 };
@@ -28,5 +36,27 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: COLORS.blue,
     gap: 10,
+  },
+  safeArea: {
+    flex: 1,
+    backgroundColor: COLORS.shark,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 45,
+  },
+  btnStyle: {
+    padding: 50,
+    backgroundColor: COLORS.beige,
+    borderRadius: 20,
+  },
+  btnText: {
+    fontSize: 52,
+    color: COLORS.ebonyClay,
+    // textShadowColor: 'rgba(0, 0, 0, 0.75)', // Колір тіні з прозорістю
+    // textShadowOffset: {width: -1, height: 1}, // Зміщення тіні
+    // textShadowRadius: 3,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: 2, height: 2},
+    textShadowRadius: 4,
   },
 });

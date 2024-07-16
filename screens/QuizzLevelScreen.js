@@ -13,7 +13,9 @@ import {
   Next,
   Options,
   Question,
+  Progress,
 } from '../components/QuizzLevelComponents';
+import {COLORS} from '../constants/colors';
 
 const QuizzLevelScreen = ({route}) => {
   const {quizz, unlockNextLevel} = useContext(QuizzContext);
@@ -60,19 +62,51 @@ const QuizzLevelScreen = ({route}) => {
       setIsOptionDisabled(false);
       setNext(false);
     }
+
+    Animated.timing(progress, {
+      toValue: currentQestionIndex + 1,
+      duration: 1000,
+      useNativeDriver: false,
+    }).start();
   };
+
+  const progressAnim = progress.interpolate({
+    inputRange: [0, questionsLength],
+    outputRange: ['0%', '100%'],
+  });
 
   const restartLevel = () => {
     console.log('RESTART FUNCTION');
   };
 
   return (
-    <View style={{flex: 1, padding: 10}}>
+    <View
+      style={{
+        flex: 1,
+        padding: 10,
+        backgroundColor: COLORS.shark,
+        // alignItems: 'center',
+      }}>
       <SafeAreaView>
+        <Progress
+          index={currentQestionIndex + 1}
+          progress={progressAnim}
+          length={questionsLength}
+        />
         <Question
           questionIndex={currentQestionIndex + 1}
-          length={questionsLength}>
-          {QUIZZ.allQuestions[currentQestionIndex].question}
+          length={questionsLength}
+          score={result}>
+          {/* <View style={{justifyContent: 'center', alignItems: 'center'}}> */}
+          <Text
+            style={{
+              color: COLORS.iron,
+              fontSize: 20,
+              textAlign: 'center',
+            }}>
+            {QUIZZ.allQuestions[currentQestionIndex].question}
+          </Text>
+          {/* </View> */}
         </Question>
         <Options
           options={QUIZZ.allQuestions[currentQestionIndex].options}

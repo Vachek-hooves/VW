@@ -1,4 +1,5 @@
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {COLORS} from '../../constants/colors';
 
 const Options = ({
   options,
@@ -18,19 +19,32 @@ const Options = ({
           {
             borderColor:
               item == correctOption
-                ? 'green'
+                ? COLORS.green
                 : item == currentOption
                 ? 'red'
-                : 'purple',
+                : COLORS.shuttleGray,
             backgroundColor:
               item == correctOption
-                ? 'green'
+                ? COLORS.shark
                 : item == currentOption
-                ? 'red'
-                : 'purple',
+                ? COLORS.shark
+                : COLORS.shark,
           },
         ]}>
-        <Text style={styles.textStyle}>{item}</Text>
+        <Text
+          style={[
+            styles.textStyle,
+            {
+              color:
+                item == correctOption
+                  ? COLORS.green
+                  : item == currentOption
+                  ? COLORS.red
+                  : COLORS.gulfStream,
+            },
+          ]}>
+          {item}
+        </Text>
       </TouchableOpacity>
     );
   }
@@ -50,16 +64,16 @@ export default Options;
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 20,
-    color: 'rgba(184, 25, 37, 1)',
+    // color: COLORS.iron,
   },
   optionsContainer: {
     borderWidth: 5,
-    height: 80,
+    height: 70,
     borderRadius: 30,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    marginVertical: 20,
+    marginVertical: 15,
   },
 });

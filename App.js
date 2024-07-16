@@ -21,8 +21,16 @@ function App() {
             component={Intro}
             options={{headerShown: false}}
           />
-          <Stack.Screen name="MainScreen" component={MainScreen} />
-          <Stack.Screen name="GameScreen" component={GameScreen} />
+          <Stack.Screen
+            name="MainScreen"
+            component={MainScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="GameScreen"
+            component={GameScreen}
+            options={{headerShown: false}}
+          />
           <Stack.Screen name="RulesScreen" component={RulesScreen} />
           <Stack.Screen
             name="QuizzLevelScreen"
