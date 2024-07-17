@@ -23,7 +23,6 @@ const QuizzLevelScreen = ({route}) => {
   const QUIZZ = quizz.find(item => item.id === QUIZZ_ID);
   const questionsLength = QUIZZ.allQuestions.length;
   const story = QUIZZ.misticStory;
-  // console.log(QUIZZ.allQuestions[0].options);
 
   const [currentQestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentOption, setCurrentOption] = useState(null);
@@ -106,11 +105,9 @@ const QuizzLevelScreen = ({route}) => {
           questionIndex={currentQestionIndex + 1}
           length={questionsLength}
           score={result}>
-          {/* <View style={{justifyContent: 'center', alignItems: 'center'}}> */}
           <Text style={styles.questionContainer}>
             {QUIZZ.allQuestions[currentQestionIndex].question}
           </Text>
-          {/* </View> */}
         </Question>
         <Options
           options={QUIZZ.allQuestions[currentQestionIndex].options}

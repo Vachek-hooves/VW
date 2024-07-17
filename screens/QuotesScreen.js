@@ -7,14 +7,13 @@ import {
   TouchableOpacity,
   View,
   Modal,
-  Image,
 } from 'react-native';
 import {useContext, useState, useEffect} from 'react';
 import {QuizzContext} from '../store/quizz_context';
 import {COLORS} from '../constants/colors';
 import {quizOptions} from '../data/quizOptions';
 import {MyButton, ResetIcon} from '../components/ui';
-import {CustomModal, MysticStory} from '../components/QuizzLevelComponents';
+import { MysticStory} from '../components/QuizzLevelComponents';
 import {WinModal} from '../components/QuotesComponens';
 
 const QuotesScreen = () => {
@@ -43,10 +42,10 @@ const QuotesScreen = () => {
   const validation = item => {
     const choosenAuthor = item.author;
     setPickedImage(item.author);
-    console.log('CHOOSEN AUTHOR--', choosenAuthor);
-    console.log('CORRECT AUTHOR---', quizOptions[currentQuoteIndex]?.author);
+    // console.log('CHOOSEN AUTHOR--', choosenAuthor);
+    // console.log('CORRECT AUTHOR---', quizOptions[currentQuoteIndex]?.author);
     if (choosenAuthor === quizOptions[currentQuoteIndex].author) {
-      console.log('CONGRATULATION YOU FIND THE AUTHOR OF QUOTE');
+      // console.log('CONGRATULATION YOU FIND THE AUTHOR OF QUOTE');
       setCorrectAuthorId(item.id);
       setActiveNextBtn(true);
     }
@@ -54,10 +53,10 @@ const QuotesScreen = () => {
 
   const nextQuoteHandler = () => {
     // if (currentQuoteIndex == quizOptions.length - 1) {
-    console.log(QUESTIONS.length);
+    // console.log(QUESTIONS.length);
     if (QUESTIONS.length <= 1) {
-      console.log(currentQuoteIndex, quizOptions.length - 1);
-      console.log('FINALLLY YOU HAVE PASSED THIS LEVEL');
+      // console.log(currentQuoteIndex, quizOptions.length - 1);
+      // console.log('FINALLLY YOU HAVE PASSED THIS LEVEL');
       quoteRemoveHandler(correctAuthorId);
       setCompleteGameModal(true);
       // setIsModal(true);
@@ -153,9 +152,6 @@ const QuotesScreen = () => {
             }}
           />
         </Modal>
-        {/* <Modal visible={isModal} animationType="slide" transparent={true}>
-          <ModalStory story={STORY} closeModal={() => setIsModal(false)} />
-        </Modal> */}
       </SafeAreaView>
     </View>
   );
@@ -186,8 +182,6 @@ export const NextButton = ({onPress}) => {
         padding: 15,
         borderRadius: 16,
         backgroundColor: COLORS.gulfStream,
-        // position: 'absolute',
-        // top: 170,
       }}>
       <Text
         style={{

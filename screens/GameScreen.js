@@ -4,6 +4,7 @@ import {useContext} from 'react';
 import {Level} from '../components/GameScreenComponents';
 import {COLORS} from '../constants/colors';
 import {QuoteLevel} from '../components/QuotesComponens';
+import {BackIcon} from '../components/ui';
 const GameScreen = () => {
   const {quizz, quotes} = useContext(QuizzContext);
 
@@ -24,11 +25,13 @@ const GameScreen = () => {
           keyExtractor={item => item.id.toString()}
           renderItem={renderQuizzLevels}
           showsVerticalScrollIndicator={false}
-          // scrollEnabled={false}
         />
         {/* <QuoteLevel /> */}
         {isAllUnlock() && <QuoteLevel data={quotes} />}
       </SafeAreaView>
+      <View style={{alignItems: 'flex-end', marginRight: 60, marginBottom: 50}}>
+        <BackIcon />
+      </View>
     </View>
   );
 };

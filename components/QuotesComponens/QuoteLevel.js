@@ -24,12 +24,12 @@ const QuoteLevel = () => {
         onPress={navigator}
         style={[
           styles.container,
-          {borderColor: isLocked ? COLORS.tuna : COLORS.beige},
+          // {borderColor: isLocked ? COLORS.tuna : COLORS.beige},
         ]}>
         <Text
           style={[
             styles.text,
-            {color: isLocked ? COLORS.iron + 50 : COLORS.iron},
+            // {color: isLocked ? COLORS.iron + 50 : COLORS.iron},
           ]}>
           {THEME}
         </Text>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginVertical: 20,
     // width: '100%',
-    marginBottom: 100,
+    marginBottom: 70,
   },
   text: {
     fontSize: 24,
