@@ -13,7 +13,7 @@ const GameScreen = () => {
   };
 
   function renderQuizzLevels({item}) {
-    return <Level data={item} quotes={quotes} />;
+    return <Level data={item} />;
   }
 
   return (
@@ -26,8 +26,8 @@ const GameScreen = () => {
           showsVerticalScrollIndicator={false}
           // scrollEnabled={false}
         />
-        <QuoteLevel data={quotes} />
-        {/* {isAllUnlock() && <QuoteLevel data={quotes} />} */}
+        {/* <QuoteLevel /> */}
+        {isAllUnlock() && <QuoteLevel data={quotes} />}
       </SafeAreaView>
     </View>
   );

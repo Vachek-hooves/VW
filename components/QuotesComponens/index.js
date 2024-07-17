@@ -1,2 +1,3 @@
 import QuoteLevel from './QuoteLevel';
-export {QuoteLevel};
+import WinModal from './WinModal';
+export {QuoteLevel, WinModal};

@@ -5,7 +5,7 @@ const CloseIcon = () => {
   return (
     <View>
       <Image
-        source={require('../../assets/img/delete.png')}
+        source={require('../../assets/img/icons/delete.png')}
         style={{
           width: 40,
           height: 40,

@@ -4,7 +4,7 @@ const LoseIcon = () => {
   return (
     <View>
       <Image
-        source={require('../../assets/img/lose.png')}
+        source={require('../../assets/img/icons/lose.png')}
         style={{width: 90, height: 90}}
       />
     </View>

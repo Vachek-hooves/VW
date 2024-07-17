@@ -1,13 +1,18 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {COLORS} from '../../constants/colors';
+import {useContext} from 'react';
+import {QuizzContext} from '../../store/quizz_context';
 
-const QuoteLevel = ({data}) => {
+const QuoteLevel = () => {
+  const {quotes} = useContext(QuizzContext);
+  const QUOTE = quotes[0];
+
   const navigation = useNavigation();
-  const isLocked = data[0]?.isLocked;
-  const THEME = data[0]?.theme;
+  const isLocked = QUOTE.isLocked;
+  const THEME = QUOTE.theme;
   function navigator() {
-    navigation.navigate('QuotesScreen', {data});
+    navigation.navigate('QuotesScreen');
   }
 
   return (

@@ -12,8 +12,6 @@ const CustomModal = ({restart, result, length, story}) => {
   function navigateMainMenu() {
     navigation.navigate('GameScreen');
   }
-  // developing only 
-  // const summary = true;
 
   return (
     <View style={styles.mainContainer}>

@@ -2,6 +2,7 @@ import {createContext, useEffect, useState} from 'react';
 import {
   getQuizzData,
   getQuotesData,
+  removeQuoteById,
   saveQuizzToAsyncStorage,
   saveQuotesData,
 } from './utils';
@@ -12,6 +13,7 @@ import {QUOTES} from '../data/famous_quotes';
 export const QuizzContext = createContext({
   quizz: [],
   quotes: [],
+  
 });
 
 export const QuizzProvider = ({children}) => {
@@ -72,7 +74,33 @@ export const QuizzProvider = ({children}) => {
     }
   };
 
-  const value = {quizz, unlockNextLevel, quotes};
+  const quoteRemoveHandler = async id => {
+    // console.log('remove fn');
+    try {
+      const updatedQuotes = quotes.map(quote => ({
+        ...quote,
+        questions: quote.questions.filter(question => question.id !== id),
+      }));
+      // console.log(updatedQuotes);
+      setQuotes(updatedQuotes);
+      await saveQuotesData(updatedQuotes);
+    } catch (error) {}
+  };
+
+  const resetQuotesLevel = async () => {
+    try {
+      await saveQuotesData(QUOTES);
+      setQuotes(QUOTES);
+    } catch (error) {}
+  };
+
+  const value = {
+    quizz,
+    unlockNextLevel,
+    quotes,
+    quoteRemoveHandler,
+    resetQuotesLevel,
+  };
   return (
     <QuizzContext.Provider value={value}>{children}</QuizzContext.Provider>
   );

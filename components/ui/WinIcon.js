@@ -4,7 +4,7 @@ const LoseIcon = () => {
   return (
     <View>
       <Image
-        source={require('../../assets/img/win.png')}
+        source={require('../../assets/img/icons/win.png')}
         style={{width: 120, height: 120}}
       />
     </View>

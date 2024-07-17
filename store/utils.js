@@ -35,3 +35,4 @@ export const getQuotesData = async () => {
     console.log('Quotes data fetching error', error);
   }
 };
+

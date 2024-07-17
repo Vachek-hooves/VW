@@ -1,9 +1,8 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {COLORS} from '../../constants/colors';
-import {QuoteLevel} from '../QuotesComponens';
+import {COLORS} from '../../constants/colors';;
 
-const Level = ({data, quotes}) => {
+const Level = ({data}) => {
   const navigation = useNavigation();
   const THEME = data.theme;
   const DESCRIPTION = data.description;
@@ -31,7 +30,7 @@ const Level = ({data, quotes}) => {
           {DESCRIPTION}
         </Text>
       </TouchableOpacity>
-      {/* <QuoteLevel data={quotes} /> */}
+     
     </View>
   );
 };

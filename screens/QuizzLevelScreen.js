@@ -95,13 +95,7 @@ const QuizzLevelScreen = ({route}) => {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        padding: 10,
-        backgroundColor: COLORS.shark,
-        // alignItems: 'center',
-      }}>
+    <View style={styles.mainContainer}>
       <SafeAreaView>
         <Progress
           index={currentQestionIndex + 1}
@@ -113,12 +107,7 @@ const QuizzLevelScreen = ({route}) => {
           length={questionsLength}
           score={result}>
           {/* <View style={{justifyContent: 'center', alignItems: 'center'}}> */}
-          <Text
-            style={{
-              color: COLORS.iron,
-              fontSize: 20,
-              textAlign: 'center',
-            }}>
+          <Text style={styles.questionContainer}>
             {QUIZZ.allQuestions[currentQestionIndex].question}
           </Text>
           {/* </View> */}
@@ -146,4 +135,15 @@ const QuizzLevelScreen = ({route}) => {
 
 export default QuizzLevelScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: COLORS.shark,
+  },
+  questionContainer: {
+    color: COLORS.iron,
+    fontSize: 20,
+    textAlign: 'center',
+  },
+});
