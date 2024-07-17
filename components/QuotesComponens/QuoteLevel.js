@@ -1,23 +1,27 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {COLORS} from '../../constants/colors';;
+import {COLORS} from '../../constants/colors';
+import {useContext} from 'react';
+import {QuizzContext} from '../../store/quizz_context';
 
-const Level = ({data}) => {
+const QuoteLevel = () => {
+  const {quotes} = useContext(QuizzContext);
+  const QUOTE = quotes[0];
+
   const navigation = useNavigation();
-  const THEME = data.theme;
-  const DESCRIPTION = data.description;
-  const isLocked = data.isLocked;
-
-  function navigateToQuizz() {
-    navigation.navigate('QuizzLevelScreen', {quizzId: data.id});
+  const isLocked = QUOTE.isLocked;
+  const THEME = QUOTE.theme;
+  function navigator() {
+    navigation.navigate('QuotesScreen');
   }
 
   return (
-    <View>
+    <View style={{width: '100%'}}>
+      <Text style={{textAlign: 'center', color: COLORS.beige, fontSize: 18}}>
+        Bonus Level
+      </Text>
       <TouchableOpacity
-        activeOpacity={0.7}
-        onPress={navigateToQuizz}
-        disabled={isLocked}
+        onPress={navigator}
         style={[
           styles.container,
           {borderColor: isLocked ? COLORS.tuna : COLORS.beige},
@@ -27,15 +31,14 @@ const Level = ({data}) => {
             styles.text,
             {color: isLocked ? COLORS.iron + 50 : COLORS.iron},
           ]}>
-          {DESCRIPTION}
+          {THEME}
         </Text>
       </TouchableOpacity>
-     
     </View>
   );
 };
 
-export default Level;
+export default QuoteLevel;
 
 const styles = StyleSheet.create({
   container: {
@@ -45,6 +48,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 20,
     marginVertical: 20,
+    // width: '100%',
+    marginBottom: 100,
   },
   text: {
     fontSize: 24,

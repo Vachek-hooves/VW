@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.shuttleGray,
     padding: 10,
     borderRadius: 20,
-    height: 220,
+    height: 245,
     // justifyContent: 'space-around',
     marginTop: 50,
     // justifyContent: 'center',

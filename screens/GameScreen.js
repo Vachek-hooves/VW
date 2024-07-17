@@ -3,32 +3,31 @@ import {QuizzContext} from '../store/quizz_context';
 import {useContext} from 'react';
 import {Level} from '../components/GameScreenComponents';
 import {COLORS} from '../constants/colors';
+import {QuoteLevel} from '../components/QuotesComponens';
 const GameScreen = () => {
-  const {quizz} = useContext(QuizzContext);
+  const {quizz, quotes} = useContext(QuizzContext);
 
-  //   console.log('Game Screen---', quizz);
+  const isAllUnlock = () => {
+    const lockArray = quizz.map(item => item.isLocked);
+    return lockArray.every(item => item === false);
+  };
+
   function renderQuizzLevels({item}) {
-    // console.log(item);
     return <Level data={item} />;
   }
 
   return (
     <View style={styles.mainContainer}>
-      <SafeAreaView
-        style={{
-          flex: 1,
-          // justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: COLORS.shark,
-          // padding: 10,
-          marginTop: 200,
-        }}>
+      <SafeAreaView style={styles.safeArea}>
         <FlatList
           data={quizz}
-          key={item => item.id}
+          keyExtractor={item => item.id.toString()}
           renderItem={renderQuizzLevels}
           showsVerticalScrollIndicator={false}
+          // scrollEnabled={false}
         />
+        {/* <QuoteLevel /> */}
+        {isAllUnlock() && <QuoteLevel data={quotes} />}
       </SafeAreaView>
     </View>
   );
@@ -41,5 +40,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.shark,
     flex: 1,
     padding: 10,
+  },
+  safeArea: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: COLORS.shark,
+    marginTop: 100,
   },
 });

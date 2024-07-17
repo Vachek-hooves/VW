@@ -6,6 +6,7 @@ import {
   Intro,
   MainScreen,
   QuizzLevelScreen,
+  QuotesScreen,
   RulesScreen,
 } from './screens';
 
@@ -35,6 +36,11 @@ function App() {
           <Stack.Screen
             name="QuizzLevelScreen"
             component={QuizzLevelScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="QuotesScreen"
+            component={QuotesScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
