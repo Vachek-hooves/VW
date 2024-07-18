@@ -8,7 +8,7 @@ const Intro = ({navigation}) => {
   useEffect(() => {
     Animated.timing(fadeAnimation, {
       toValue: 1,
-      duration: 3500,
+      duration: 1000,
       useNativeDriver: true,
     }).start(() => navigation.replace('MainScreen'));
   }, [fadeAnimation]);

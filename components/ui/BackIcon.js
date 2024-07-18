@@ -1,6 +1,7 @@
 import {Image, TouchableOpacity} from 'react-native';
 import {COLORS} from '../../constants/colors';
 import {useNavigation} from '@react-navigation/native';
+
 const BackIcon = ({style}) => {
   const navigation = useNavigation();
   function backNav() {
