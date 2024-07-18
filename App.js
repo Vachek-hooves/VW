@@ -8,6 +8,7 @@ import {
   QuizzLevelScreen,
   QuotesScreen,
   RulesScreen,
+  UserScreen,
 } from './screens';
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ function App() {
           <Stack.Screen name="RulesScreen" component={RulesScreen} />
           <Stack.Screen name="QuizzLevelScreen" component={QuizzLevelScreen} />
           <Stack.Screen name="QuotesScreen" component={QuotesScreen} />
+          <Stack.Screen name="UserScreen" component={UserScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </QuizzProvider>

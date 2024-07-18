@@ -4,6 +4,7 @@ import GameScreen from './GameScreen';
 import RulesScreen from './RulesScreen';
 import QuizzLevelScreen from './QuizzLevelScreen';
 import QuotesScreen from './QuotesScreen';
+import UserScreen from './UserScreen';
 export {
   Intro,
   MainScreen,
@@ -11,4 +12,5 @@ export {
   RulesScreen,
   QuizzLevelScreen,
   QuotesScreen,
+  UserScreen
 };

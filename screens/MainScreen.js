@@ -6,7 +6,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {COLORS} from '../constants/colors';
-import {MyButton} from '../components/ui';
+import {MyButton, UserIcon} from '../components/ui';
 
 const MainScreen = ({navigation}) => {
   function navigateGame() {
@@ -18,6 +18,7 @@ const MainScreen = ({navigation}) => {
   return (
     <View style={styles.mainContainer}>
       <SafeAreaView style={styles.safeArea}>
+        <UserIcon/>
         <MyButton onPressFn={navigateGame} btnStyle={styles.btnStyle}>
           <Text style={styles.btnText}>Game</Text>
         </MyButton>
