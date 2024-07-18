@@ -4,20 +4,18 @@ const CustomInput = ({
   label,
   styleContainer,
   styleText,
-  style,
+  styleInput,
   onChangeText,
   value,
-  maxLength,
   keyboardType,
 }) => {
   return (
     <View style={styleContainer}>
       <Text style={styleText}>{label}</Text>
       <TextInput
-        style={style}
+        style={styleInput}
         onChangeText={onChangeText}
         value={value}
-        maxLength={maxLength}
         keyboardType={keyboardType}
       />
     </View>

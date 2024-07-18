@@ -8,18 +8,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.shark,
     justifyContent: 'center',
   },
-  renameContainer: {
-    // Your styles for rename container
-  },
-  inputText: {
-    // Your styles for input text
-  },
-  textInput: {
-    // Your styles for text input
-  },
-  nameStyle: {
-    // Your styles for name text
-  },
   imageContainer: {
     width: 180,
     height: 220,
@@ -32,6 +20,38 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     borderRadius: 20,
+  },
+  renameSaveBtn: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: COLORS.beige,
+    padding: 10,
+    borderRadius: 20,
+    borderColor: COLORS.gulfStream,
+    backgroundColor: COLORS.gulfStream,
+    width: 100,
+    marginVertical: 10,
+  },
+  changeInputText: {
+    color: COLORS.beige,
+    fontSize: 18,
+  },
+  changeInputStyle: {
+    borderWidth: 2,
+    padding: 10,
+    borderRadius: 20,
+    marginVertical: 20,
+    borderColor: COLORS.gulfStream,
+    width: 200,
+    color: COLORS.beige,
+    fontSize: 20,
+  },
+  changeInputContainer: {
+    // marginVertical: 20,
+    color: COLORS.beige,
+  },
+  renameContainer: {
+    alignItems: 'center',
   },
 });
 export default styles;

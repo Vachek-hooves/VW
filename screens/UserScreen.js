@@ -56,7 +56,7 @@ const UserScreen = ({navigation}) => {
           <MyButton
             positionStyle={{position: 'absolute', bottom: 140}}
             onPressFn={() => navigation.replace('MainScreen')}>
-            <Text>Discover Hotels</Text>
+            <Text>Main Menu</Text>
           </MyButton>
         </>
       ) : (
@@ -72,12 +72,6 @@ const UserScreen = ({navigation}) => {
                 styleContainer={{marginVertical: 25}}
                 styleText={{marginBottom: 5, fontSize: 16}}
               />
-              {/* <ImagePicker
-                handleImage={i => inputsSave('image', i)}
-                style={{fontSize: 16}}
-                btnStyle={[styles.inputField, {alignItems: 'center'}]}>
-                Add Photo
-              </ImagePicker> */}
             </View>
             <MyButton positionStyle={{marginTop: 60}} onPressFn={submit}>
               <Text>Submit</Text>
