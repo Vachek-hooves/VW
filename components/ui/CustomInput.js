@@ -1,4 +1,5 @@
 import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {COLORS} from '../../constants/colors';
 
 const CustomInput = ({
   label,
@@ -13,7 +14,7 @@ const CustomInput = ({
     <View style={styleContainer}>
       <Text style={styleText}>{label}</Text>
       <TextInput
-        style={styleInput}
+        style={[styles.input, styleInput]}
         onChangeText={onChangeText}
         value={value}
         keyboardType={keyboardType}
@@ -24,4 +25,6 @@ const CustomInput = ({
 
 export default CustomInput;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  input: {},
+});

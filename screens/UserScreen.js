@@ -7,6 +7,7 @@ import {CustomInput, LayoutKeyboard, MyButton} from '../components/ui';
 import {useState, useEffect} from 'react';
 import UserDetails from '../components/UserScreenComponents/UserDetails';
 import styles from '../components/UserScreenComponents/styles';
+import {COLORS} from '../constants/colors';
 
 const setDateId = () => Date.now().toString();
 
@@ -53,11 +54,6 @@ const UserScreen = ({navigation}) => {
       {user ? (
         <>
           <UserDetails user={user} />
-          <MyButton
-            positionStyle={{position: 'absolute', bottom: 140}}
-            onPressFn={() => navigation.replace('MainScreen')}>
-            <Text>Main Menu</Text>
-          </MyButton>
         </>
       ) : (
         <LayoutKeyboard>
@@ -68,19 +64,47 @@ const UserScreen = ({navigation}) => {
                 value={userInputs.name}
                 onChangeText={value => inputsSave('name', value)}
                 label="Nick Name"
-                style={styles.inputField}
+                styleInput={{
+                  padding: 10,
+                  backgroundColor: COLORS.beige,
+                  borderRadius: 20,
+                  fontSize: 22,
+                  width: 220,
+                }}
                 styleContainer={{marginVertical: 25}}
-                styleText={{marginBottom: 5, fontSize: 16}}
+                styleText={{
+                  marginBottom: 5,
+                  fontSize: 22,
+                  color: COLORS.beige,
+                }}
               />
             </View>
-            <MyButton positionStyle={{marginTop: 60}} onPressFn={submit}>
-              <Text>Submit</Text>
-            </MyButton>
-            <MyButton
-              positionStyle={{marginVertical: 20}}
-              onPressFn={resetInputs}>
-              <Text>Reset</Text>
-            </MyButton>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'space-between',
+                gap: 20,
+                marginTop: 30,
+              }}>
+              <MyButton
+                positionStyle={{marginTop: 60}}
+                onPressFn={submit}
+                btnStyle={styles.btnStyle}>
+                <Text
+                  style={{fontSize: 26, fontWeight: '500', color: COLORS.iron}}>
+                  Submit
+                </Text>
+              </MyButton>
+              <MyButton
+                btnStyle={styles.btnStyle}
+                positionStyle={{marginVertical: 20}}
+                onPressFn={resetInputs}>
+                <Text
+                  style={{fontSize: 26, fontWeight: '500', color: COLORS.iron}}>
+                  Reset
+                </Text>
+              </MyButton>
+            </View>
           </View>
         </LayoutKeyboard>
       )}

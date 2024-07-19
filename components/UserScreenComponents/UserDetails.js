@@ -1,11 +1,13 @@
 import {Text, View} from 'react-native';
 import {useState} from 'react';
 import {CustomInput, MyButton} from '../ui';
+import {useNavigation} from '@react-navigation/native';
 import {updateUserData} from '../Utils/userUtils';
-import styles from './styles';
 import {COLORS} from '../../constants/colors';
+import styles from './styles';
 
 const UserDetails = ({user}) => {
+  const navigation = useNavigation();
   const [isNameToChange, setIsNameToChange] = useState(false);
   const [newName, setNewName] = useState(user.name);
 
@@ -29,13 +31,27 @@ const UserDetails = ({user}) => {
           <MyButton
             btnStyle={styles.renameSaveBtn}
             onPressFn={nameChangeHandler}>
-            <Text style={{color: COLORS.shark}}>SAVE</Text>
+            <Text style={{color: COLORS.shark, fontSize: 22}}>SAVE</Text>
           </MyButton>
         </View>
       ) : (
-        <MyButton onPressFn={() => setIsNameToChange(true)}>
-          <Text style={styles.nameStyle}>{newName}</Text>
-        </MyButton>
+        <View style={{alignItems: 'center'}}>
+          <MyButton onPressFn={() => setIsNameToChange(true)}>
+            <Text style={{fontSize: 42, color: COLORS.beige}}>{newName}</Text>
+          </MyButton>
+          <MyButton
+            btnStyle={{
+              borderWidth: 2,
+              padding: 10,
+              borderRadius: 20,
+              borderColor: COLORS.gulfStream,
+              alignItems: 'center',
+              marginVertical: 30,
+            }}
+            onPressFn={() => navigation.replace('MainScreen')}>
+            <Text style={{color: COLORS.beige, fontSize: 22}}>Main Menu</Text>
+          </MyButton>
+        </View>
       )}
     </View>
   );

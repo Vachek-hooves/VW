@@ -7,13 +7,14 @@ import {
   TouchableOpacity,
   View,
   Modal,
+  Dimensions,
 } from 'react-native';
 import {useContext, useState, useEffect} from 'react';
 import {QuizzContext} from '../store/quizz_context';
 import {COLORS} from '../constants/colors';
 import {quizOptions} from '../data/quizOptions';
 import {MyButton, ResetIcon} from '../components/ui';
-import { MysticStory} from '../components/QuizzLevelComponents';
+import {MysticStory} from '../components/QuizzLevelComponents';
 import {WinModal} from '../components/QuotesComponens';
 
 const QuotesScreen = () => {
@@ -106,11 +107,14 @@ const QuotesScreen = () => {
       </TouchableOpacity>
     );
   }
+  const {width, height} = Dimensions.get('window');
+  const isSmallScreen = height < 700;
+  const isSmallWidth = width < 400;
 
   return (
     <View style={styles.mainContainer}>
       <SafeAreaView style={{flex: 1, justifyContent: 'space-between'}}>
-        <View style={{gap: 120}}>
+        <View style={{flex:1,gap:50}}>
           {QUESTIONS.length !== 0 && (
             <View style={styles.quoteContainer}>
               <Text style={styles.quoteText}>
@@ -124,6 +128,7 @@ const QuotesScreen = () => {
               keyExtractor={item => item.id.toString()}
               renderItem={renderQuestion}
               horizontal={true}
+              showsHorizontalScrollIndicator={false}
             />
           </View>
         </View>
@@ -131,7 +136,7 @@ const QuotesScreen = () => {
           style={{
             width: '100%',
             alignItems: 'flex-end',
-            gap: 30,
+            gap: isSmallWidth ? 15 : 30,
           }}>
           {activeNextBtn && <NextButton onPress={nextQuoteHandler} />}
           <MyButton
@@ -162,12 +167,12 @@ export default QuotesScreen;
 const styles = StyleSheet.create({
   mainContainer: {backgroundColor: COLORS.shark, padding: 20, flex: 1},
   quoteContainer: {
-    marginTop: 100,
+    marginTop: 50,
     borderWidth: 1,
     padding: 10,
     borderRadius: 20,
     borderColor: COLORS.gulfStream,
-    height: 250,
+    height:300
   },
   quoteText: {textAlign: 'center', fontSize: 32, color: COLORS.iron},
 });

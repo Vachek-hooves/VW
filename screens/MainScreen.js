@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import {COLORS} from '../constants/colors';
 import {MyButton, UserIcon} from '../components/ui';
 
@@ -18,13 +12,23 @@ const MainScreen = ({navigation}) => {
   return (
     <View style={styles.mainContainer}>
       <SafeAreaView style={styles.safeArea}>
-        <UserIcon/>
-        <MyButton onPressFn={navigateGame} btnStyle={styles.btnStyle}>
-          <Text style={styles.btnText}>Game</Text>
-        </MyButton>
-        <MyButton onPressFn={navigateRules} btnStyle={styles.btnStyle}>
-          <Text style={styles.btnText}>Rules</Text>
-        </MyButton>
+        <View
+          style={{
+            alignItems: 'flex-end',
+            width: '100%',
+            marginRight: 60,
+            marginTop: 40,
+          }}>
+          <UserIcon />
+        </View>
+        <View style={{gap: 30, flex: 1, justifyContent: 'center'}}>
+          <MyButton onPressFn={navigateGame} btnStyle={styles.btnStyle}>
+            <Text style={styles.btnText}>Game</Text>
+          </MyButton>
+          <MyButton onPressFn={navigateRules} btnStyle={styles.btnStyle}>
+            <Text style={styles.btnText}>Rules</Text>
+          </MyButton>
+        </View>
       </SafeAreaView>
     </View>
   );
@@ -35,15 +39,15 @@ export default MainScreen;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    // backgroundColor: COLORS.blue,
     gap: 10,
   },
   safeArea: {
     flex: 1,
     backgroundColor: COLORS.shark,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     gap: 45,
+    // justifyContent: 'space-evenly',
   },
   btnStyle: {
     padding: 50,
@@ -53,8 +57,8 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 52,
     color: COLORS.ebonyClay,
-    // textShadowColor: 'rgba(0, 0, 0, 0.75)', // Колір тіні з прозорістю
-    // textShadowOffset: {width: -1, height: 1}, // Зміщення тіні
+    // textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    // textShadowOffset: {width: -1, height: 1},
     // textShadowRadius: 3,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: 2, height: 2},

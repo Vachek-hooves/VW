@@ -1,7 +1,11 @@
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native';
 import {COLORS} from '../../constants/colors';
 
 const Next = ({onPress}) => {
+  const {width, height} = Dimensions.get('window');
+  const isSmallScreen = height < 700;
+  const isSmallWidth = width < 400;
+
   return (
     <TouchableOpacity onPress={onPress} style={styles.nextContainerBtn}>
       <Text style={styles.nextText}>Next</Text>
@@ -13,11 +17,12 @@ export default Next;
 
 const styles = StyleSheet.create({
   nextContainerBtn: {
-    marginTop: 30,
+    marginTop: 20,
     width: '100%',
     padding: 15,
     borderRadius: 16,
     backgroundColor: COLORS.gulfStream,
+    alignSelf: 'center',
   },
   nextText: {
     fontSize: 30,

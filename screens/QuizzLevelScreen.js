@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Modal,
+  Dimensions,
 } from 'react-native';
 import {QuizzContext} from '../store/quizz_context';
 import {useContext, useEffect, useState} from 'react';
@@ -93,9 +94,12 @@ const QuizzLevelScreen = ({route}) => {
     }).start();
   };
 
+  const {width, height} = Dimensions.get('window');
+  const isSmallScreen = height < 700;
+
   return (
-    <View style={styles.mainContainer}>
-      <SafeAreaView>
+    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.shark}}>
+      <View style={styles.mainContainer}>
         <Progress
           index={currentQestionIndex + 1}
           progress={progressAnim}
@@ -125,8 +129,8 @@ const QuizzLevelScreen = ({route}) => {
             length={questionsLength}
           />
         </Modal>
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -140,7 +144,8 @@ const styles = StyleSheet.create({
   },
   questionContainer: {
     color: COLORS.iron,
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
+    // marginBottom: 10,
   },
 });

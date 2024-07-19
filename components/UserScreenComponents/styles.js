@@ -4,9 +4,10 @@ import {COLORS} from '../../constants/colors';
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
     backgroundColor: COLORS.shark,
     justifyContent: 'center',
+    padding: 25,
   },
   imageContainer: {
     width: 180,
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   },
   changeInputText: {
     color: COLORS.beige,
-    fontSize: 18,
+    fontSize: 22,
   },
   changeInputStyle: {
     borderWidth: 2,
@@ -42,9 +43,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginVertical: 20,
     borderColor: COLORS.gulfStream,
-    width: 200,
+    width: 220,
     color: COLORS.beige,
-    fontSize: 20,
+    fontSize: 24,
   },
   changeInputContainer: {
     // marginVertical: 20,
@@ -52,6 +53,15 @@ const styles = StyleSheet.create({
   },
   renameContainer: {
     alignItems: 'center',
+  },
+  // user screen components styles
+  btnStyle: {
+    borderWidth: 2,
+    padding: 10,
+    borderRadius: 20,
+    borderColor: COLORS.gulfStream,
+    alignItems: 'center',
+    flex: 1,
   },
 });
 export default styles;

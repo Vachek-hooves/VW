@@ -1,12 +1,21 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Dimensions,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {COLORS} from '../../constants/colors';;
+import {COLORS} from '../../constants/colors';
 
 const Level = ({data}) => {
   const navigation = useNavigation();
   const THEME = data.theme;
   const DESCRIPTION = data.description;
   const isLocked = data.isLocked;
+  const {width, height} = Dimensions.get('window');
+  const isSmallScreen = height < 700;
+  const isSmallWidth = width < 400;
 
   function navigateToQuizz() {
     navigation.navigate('QuizzLevelScreen', {quizzId: data.id});
@@ -25,12 +34,12 @@ const Level = ({data}) => {
         <Text
           style={[
             styles.text,
+            isSmallWidth ? styles.smallSizeText : styles.text,
             {color: isLocked ? COLORS.iron + 50 : COLORS.iron},
           ]}>
           {DESCRIPTION}
         </Text>
       </TouchableOpacity>
-     
     </View>
   );
 };
@@ -47,9 +56,12 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   text: {
-    fontSize: 24,
+    fontSize: 23,
     textAlign: 'center',
     color: COLORS.iron,
     fontWeight: '700',
+  },
+  smallSizeText: {
+    fontSize: 20,
   },
 });

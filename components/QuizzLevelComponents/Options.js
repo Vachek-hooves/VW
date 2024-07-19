@@ -1,4 +1,11 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Dimensions,
+} from 'react-native';
 import {COLORS} from '../../constants/colors';
 
 const Options = ({
@@ -8,6 +15,8 @@ const Options = ({
   correctOption,
   currentOption,
 }) => {
+  const {width, height} = Dimensions.get('window');
+  const isSmallScreen = height < 600;
   function renderOptionsList({item}) {
     console.log(item);
     // console.log(correctOption)
@@ -17,6 +26,7 @@ const Options = ({
         disabled={isDisable}
         style={[
           styles.optionsContainer,
+          // isSmallScreen && styles.smallScreenOptions,
           {
             borderColor:
               item == correctOption
@@ -75,6 +85,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    marginVertical: 15,
+    marginVertical: 10,
+  },
+  smallScreenOptions: {
+    height: 50, 
+    paddingHorizontal: 15, 
+    marginVertical: 10,
   },
 });

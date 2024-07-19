@@ -23,14 +23,14 @@ export default Question;
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: COLORS.shuttleGray,
-    padding: 10,
+    padding: 5,
     borderRadius: 20,
-    height: 245,
+    height: 230,
     // justifyContent: 'space-around',
-    marginTop: 50,
+    marginTop: 45,
     // justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:20
+    marginBottom:10
   },
   subContainer: {
     alignItems: 'center',
