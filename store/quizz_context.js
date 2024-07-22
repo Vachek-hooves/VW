@@ -2,11 +2,9 @@ import {createContext, useEffect, useState} from 'react';
 import {
   getQuizzData,
   getQuotesData,
-  removeQuoteById,
   saveQuizzToAsyncStorage,
   saveQuotesData,
 } from './utils';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {QUIZZ} from '../data/quiz';
 import {QUOTES} from '../data/famous_quotes';
 
@@ -75,13 +73,11 @@ export const QuizzProvider = ({children}) => {
   };
 
   const quoteRemoveHandler = async id => {
-    // console.log('remove fn');
     try {
       const updatedQuotes = quotes.map(quote => ({
         ...quote,
         questions: quote.questions.filter(question => question.id !== id),
       }));
-      // console.log(updatedQuotes);
       setQuotes(updatedQuotes);
       await saveQuotesData(updatedQuotes);
     } catch (error) {}

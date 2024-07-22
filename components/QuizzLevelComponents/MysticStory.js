@@ -28,7 +28,7 @@ const MysticStory = ({closeModal, story}) => {
         <View style={{width: '100%', alignItems: 'flex-end'}}>
           <MyButton
             onPressFn={closeModal}
-            btnStyle={{marginHorizontal: 50, marginBottom: 60, marginTop: 20}}>
+            btnStyle={{marginHorizontal: 50, marginBottom: 30, marginTop: 20}}>
             <CloseIcon />
           </MyButton>
         </View>

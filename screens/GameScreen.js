@@ -29,7 +29,7 @@ const GameScreen = () => {
         {/* <QuoteLevel /> */}
         {isAllUnlock() && <QuoteLevel data={quotes} />}
       </SafeAreaView>
-      <View style={{alignItems: 'flex-end', marginRight: 60, marginBottom: 50}}>
+      <View style={{alignItems: 'flex-end', marginRight: 60, marginBottom: 30}}>
         <BackIcon />
       </View>
     </View>
@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: COLORS.shark,
-    marginTop: 100,
+    marginTop: 80,
   },
 });

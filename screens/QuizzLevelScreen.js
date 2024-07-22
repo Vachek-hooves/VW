@@ -94,8 +94,8 @@ const QuizzLevelScreen = ({route}) => {
     }).start();
   };
 
-  const {width, height} = Dimensions.get('window');
-  const isSmallScreen = height < 700;
+  // const {width, height} = Dimensions.get('window');
+  // const isSmallScreen = height < 700;
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.shark}}>
@@ -119,6 +119,7 @@ const QuizzLevelScreen = ({route}) => {
           isDisable={isOptionDisabled}
           correctOption={correctOption}
           currentOption={currentOption}
+          activeNextBtn={next}
         />
         {next && <Next onPress={nextQuestionHandle} />}
         <Modal visible={modal} animationType="slide" transparent={true}>
@@ -146,6 +147,7 @@ const styles = StyleSheet.create({
     color: COLORS.iron,
     fontSize: 18,
     textAlign: 'center',
+    bottom:40
     // marginBottom: 10,
   },
 });

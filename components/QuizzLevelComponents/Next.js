@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   nextContainerBtn: {
     marginTop: 20,
     width: '100%',
-    padding: 15,
+    padding: 10,
     borderRadius: 16,
     backgroundColor: COLORS.gulfStream,
     alignSelf: 'center',

@@ -14,9 +14,20 @@ const Options = ({
   isDisable,
   correctOption,
   currentOption,
+  activeNextBtn,
 }) => {
   const {width, height} = Dimensions.get('window');
-  const isSmallScreen = height < 600;
+  const calculateHeight = () => {
+    if (height < 660) {
+      return 50; // маленький екран
+    } else if (height < 800) {
+      return 60; // середній екран
+    } else {
+      return 70; // великий екран
+    }
+  };
+  // const {width, height} = Dimensions.get('window');
+  // const isSmallScreen = height < 600;
   function renderOptionsList({item}) {
     console.log(item);
     // console.log(correctOption)
@@ -40,6 +51,7 @@ const Options = ({
                 : item == currentOption
                 ? COLORS.shark
                 : COLORS.shark,
+            height: calculateHeight(),
           },
         ]}>
         <Text
@@ -79,7 +91,7 @@ const styles = StyleSheet.create({
   },
   optionsContainer: {
     borderWidth: 5,
-    height: 70,
+    // height: 70,
     borderRadius: 30,
     flexDirection: 'row',
     alignItems: 'center',
@@ -88,8 +100,8 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   smallScreenOptions: {
-    height: 50, 
-    paddingHorizontal: 15, 
+    height: 50,
+    paddingHorizontal: 15,
     marginVertical: 10,
   },
 });

@@ -31,6 +31,10 @@ const QuotesScreen = () => {
   const [comleteGameModa, setCompleteGameModal] = useState(false);
   const [pickedImage, setPickedImage] = useState(null);
   console.log(QUESTIONS.length);
+  // console.log(quotesOptions.slice(-QUESTIONS.length)[0]);
+  // console.log(quotesOptions);
+
+  // const currentQuote = quizOptions.slice(-QUESTIONS.length);
 
   useEffect(() => {
     if (QUESTIONS.length === 0) {
@@ -42,29 +46,24 @@ const QuotesScreen = () => {
 
   const validation = item => {
     const choosenAuthor = item.author;
+    console.log(choosenAuthor, '--', quizOptions[currentQuoteIndex].author);
+    console.log(quizOptions.slice(-QUESTIONS.length)[0].author);
+
     setPickedImage(item.author);
-    // console.log('CHOOSEN AUTHOR--', choosenAuthor);
-    // console.log('CORRECT AUTHOR---', quizOptions[currentQuoteIndex]?.author);
-    if (choosenAuthor === quizOptions[currentQuoteIndex].author) {
-      // console.log('CONGRATULATION YOU FIND THE AUTHOR OF QUOTE');
+    // if (choosenAuthor === quizOptions[currentQuoteIndex].author) {
+    if (choosenAuthor === quizOptions.slice(-QUESTIONS.length)[0].author) {
       setCorrectAuthorId(item.id);
       setActiveNextBtn(true);
     }
   };
 
   const nextQuoteHandler = () => {
-    // if (currentQuoteIndex == quizOptions.length - 1) {
-    // console.log(QUESTIONS.length);
     if (QUESTIONS.length <= 1) {
-      // console.log(currentQuoteIndex, quizOptions.length - 1);
-      // console.log('FINALLLY YOU HAVE PASSED THIS LEVEL');
       quoteRemoveHandler(correctAuthorId);
       setCompleteGameModal(true);
-      // setIsModal(true);
     } else {
       setQuoteIndex(currentQuoteIndex + 1);
       setActiveNextBtn(false);
-      // console.log('inside next btn handler--', correctAuthorId);
       quoteRemoveHandler(correctAuthorId);
     }
   };
@@ -80,7 +79,6 @@ const QuotesScreen = () => {
   }
 
   function renderQuestion({item}) {
-    // console.log(item.author);
     return (
       <TouchableOpacity
         disabled={activeNextBtn}
@@ -114,11 +112,12 @@ const QuotesScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <SafeAreaView style={{flex: 1, justifyContent: 'space-between'}}>
-        <View style={{flex:1,gap:50}}>
+        <View style={{flex: 1, gap: 50}}>
           {QUESTIONS.length !== 0 && (
             <View style={styles.quoteContainer}>
               <Text style={styles.quoteText}>
-                {quotesOptions[currentQuoteIndex]}
+                {/* {quotesOptions[currentQuoteIndex]} */}
+                {quotesOptions.slice(-QUESTIONS.length)[0]}
               </Text>
             </View>
           )}
@@ -136,12 +135,12 @@ const QuotesScreen = () => {
           style={{
             width: '100%',
             alignItems: 'flex-end',
-            gap: isSmallWidth ? 15 : 30,
+            gap: isSmallWidth ? 25 : 30,
           }}>
           {activeNextBtn && <NextButton onPress={nextQuoteHandler} />}
           <MyButton
             onPressFn={resetLevel}
-            btnStyle={{marginHorizontal: 50, marginBottom: 30}}>
+            btnStyle={{marginHorizontal: 50, marginBottom: 20}}>
             <ResetIcon />
           </MyButton>
         </View>
@@ -167,14 +166,14 @@ export default QuotesScreen;
 const styles = StyleSheet.create({
   mainContainer: {backgroundColor: COLORS.shark, padding: 20, flex: 1},
   quoteContainer: {
-    marginTop: 50,
+    marginTop: 30,
     borderWidth: 1,
     padding: 10,
     borderRadius: 20,
     borderColor: COLORS.gulfStream,
-    height:300
+    height: 260,
   },
-  quoteText: {textAlign: 'center', fontSize: 32, color: COLORS.iron},
+  quoteText: {textAlign: 'center', fontSize: 28, color: COLORS.iron},
 });
 
 export const NextButton = ({onPress}) => {
@@ -184,7 +183,7 @@ export const NextButton = ({onPress}) => {
       btnStyle={{
         marginTop: 30,
         width: '100%',
-        padding: 15,
+        padding: 10,
         borderRadius: 16,
         backgroundColor: COLORS.gulfStream,
       }}>
