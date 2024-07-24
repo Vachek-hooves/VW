@@ -19,5 +19,9 @@ export const COLORS = {
 
   red: '#FF0000',
   green: '#059212',
-  darkRed:'#C40C0C'
+  darkRed: '#C40C0C',
+  mainTuna: '#31363F',
+  mainShuttleGray: '#61677A',
+  mainEbony: '#222831',
+  mainTimber:'#1A3636'
 };

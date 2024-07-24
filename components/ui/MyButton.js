@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet,TouchableOpacity, } from 'react-native';
 
 const MyButton = ({children, btnStyle, onPressFn}) => {
   return (

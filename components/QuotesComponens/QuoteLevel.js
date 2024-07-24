@@ -25,6 +25,7 @@ const QuoteLevel = () => {
         style={[
           styles.container,
           // {borderColor: isLocked ? COLORS.tuna : COLORS.beige},
+          {backgroundColor: isLocked ? COLORS.tuna : COLORS.tuna},
         ]}>
         <Text
           style={[

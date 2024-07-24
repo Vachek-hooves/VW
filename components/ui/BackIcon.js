@@ -15,8 +15,8 @@ const BackIcon = ({style}) => {
         style={[
           style,
           {
-            width: 40,
-            height: 40,
+            width: 50,
+            height: 50,
             tintColor: COLORS.beige,
           },
         ]}

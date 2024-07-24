@@ -44,10 +44,8 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: COLORS.shark,
-    // justifyContent: 'center',
     alignItems: 'center',
     gap: 45,
-    // justifyContent: 'space-evenly',
   },
   btnStyle: {
     padding: 50,
@@ -57,9 +55,6 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 52,
     color: COLORS.ebonyClay,
-    // textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    // textShadowOffset: {width: -1, height: 1},
-    // textShadowRadius: 3,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: 2, height: 2},
     textShadowRadius: 4,

@@ -30,11 +30,6 @@ const QuotesScreen = () => {
   const [isModal, setIsModal] = useState(false);
   const [comleteGameModa, setCompleteGameModal] = useState(false);
   const [pickedImage, setPickedImage] = useState(null);
-  console.log(QUESTIONS.length);
-  // console.log(quotesOptions.slice(-QUESTIONS.length)[0]);
-  // console.log(quotesOptions);
-
-  // const currentQuote = quizOptions.slice(-QUESTIONS.length);
 
   useEffect(() => {
     if (QUESTIONS.length === 0) {

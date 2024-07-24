@@ -29,7 +29,10 @@ const Level = ({data}) => {
         disabled={isLocked}
         style={[
           styles.container,
-          {borderColor: isLocked ? COLORS.tuna : COLORS.beige},
+          {
+            borderColor: isLocked ? COLORS.tuna : COLORS.beige,
+            backgroundColor: isLocked ? COLORS.tuna : COLORS.tuna,
+          },
         ]}>
         <Text
           style={[
@@ -48,7 +51,7 @@ export default Level;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: COLORS.beige,
     paddingVertical: 25,
     paddingHorizontal: 10,

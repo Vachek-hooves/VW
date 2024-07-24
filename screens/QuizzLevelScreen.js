@@ -5,7 +5,6 @@ import {
   Text,
   View,
   Modal,
-  Dimensions,
 } from 'react-native';
 import {QuizzContext} from '../store/quizz_context';
 import {useContext, useEffect, useState} from 'react';
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
     color: COLORS.iron,
     fontSize: 18,
     textAlign: 'center',
-    bottom:40
-    // marginBottom: 10,
+    bottom: 40,
+    
   },
 });

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {COLORS} from '../../constants/colors';
 
@@ -25,5 +25,3 @@ const UserIcon = ({style}) => {
 };
 
 export default UserIcon;
-
-const styles = StyleSheet.create({});
