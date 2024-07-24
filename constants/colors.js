@@ -23,5 +23,9 @@ export const COLORS = {
   mainTuna: '#31363F',
   mainShuttleGray: '#61677A',
   mainEbony: '#222831',
-  mainTimber:'#1A3636'
+  mainTimber: '#1A3636',
+  mainBrown: '#914F1E',
+  mainPurple: '#561C24',
+  mainGray: '#686D76',
+  mainDart:'#2F3645'
 };

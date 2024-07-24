@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    backgroundColor: COLORS.shark,
+    backgroundColor: COLORS.mainTimber,
     alignItems: 'center',
     gap: 45,
   },

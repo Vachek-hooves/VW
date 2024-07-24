@@ -5,6 +5,7 @@ import {Level} from '../components/GameScreenComponents';
 import {COLORS} from '../constants/colors';
 import {QuoteLevel} from '../components/QuotesComponens';
 import {BackIcon} from '../components/ui';
+import ResetQuiz from '../components/ui/ResetQuiz';
 const GameScreen = () => {
   const {quizz, quotes} = useContext(QuizzContext);
 
@@ -29,8 +30,16 @@ const GameScreen = () => {
         {/* <QuoteLevel /> */}
         {isAllUnlock() && <QuoteLevel data={quotes} />}
       </SafeAreaView>
-      <View style={{alignItems: 'flex-end', marginRight: 60, marginBottom: 30}}>
+      <View
+        style={{
+          marginBottom: 30,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginHorizontal: 30,
+        }}>
         <BackIcon />
+        <ResetQuiz />
       </View>
     </View>
   );
@@ -40,14 +49,14 @@ export default GameScreen;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: COLORS.shark,
+    backgroundColor: COLORS.mainTimber,
     flex: 1,
     padding: 10,
   },
   safeArea: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: COLORS.shark,
+    backgroundColor: COLORS.mainTimber,
     marginTop: 80,
   },
 });

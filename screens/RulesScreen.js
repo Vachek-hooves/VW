@@ -8,7 +8,7 @@ const RulesScreen = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.shark,
+        backgroundColor: COLORS.mainShuttleGray,
         padding: 15,
       }}>
       <SafeAreaView style={{marginBottom: 150}}>

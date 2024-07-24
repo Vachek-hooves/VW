@@ -11,7 +11,6 @@ import {QUOTES} from '../data/famous_quotes';
 export const QuizzContext = createContext({
   quizz: [],
   quotes: [],
-  
 });
 
 export const QuizzProvider = ({children}) => {
@@ -90,12 +89,22 @@ export const QuizzProvider = ({children}) => {
     } catch (error) {}
   };
 
+  const resetQuizzHandle = async () => {
+    try {
+      await saveQuizzToAsyncStorage(QUIZZ);
+      setQuizz(QUIZZ);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const value = {
     quizz,
     unlockNextLevel,
     quotes,
     quoteRemoveHandler,
     resetQuotesLevel,
+    resetQuizzHandle,
   };
   return (
     <QuizzContext.Provider value={value}>{children}</QuizzContext.Provider>

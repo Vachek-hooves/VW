@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
     // alignItems: 'center',
-    backgroundColor: COLORS.shark,
+    backgroundColor: COLORS.mainTimber,
     justifyContent: 'center',
     padding: 25,
   },

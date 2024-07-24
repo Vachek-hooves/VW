@@ -97,7 +97,7 @@ const QuizzLevelScreen = ({route}) => {
   // const isSmallScreen = height < 700;
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.shark}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.mainTimber}}>
       <View style={styles.mainContainer}>
         <Progress
           index={currentQestionIndex + 1}
@@ -140,13 +140,12 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     padding: 10,
-    backgroundColor: COLORS.shark,
+    backgroundColor: COLORS.mainTimber,
   },
   questionContainer: {
     color: COLORS.iron,
     fontSize: 18,
     textAlign: 'center',
     bottom: 40,
-    
   },
 });
